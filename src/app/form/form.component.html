@@ -1,0 +1,22 @@
+<section>
+  <div class="container">
+    <img src="../../assets/angular-3.svg">
+    <form [formGroup]="myGroup" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="login">LogIn: </label>
+        <input id="login" placeholder="login" class="form-control"
+               formControlName="login" type="text">
+        <div class="error" *ngIf="isControlInvalid('login')">Введите ваше логин. Длина от 3 до 16 символов. Первый символ обязательно буква. Один из символов большая буква.</div>
+
+        <label for="password">Password: </label>
+        <input id="password" placeholder="password" class="form-control"
+               formControlName="password" type="password">
+        <div class="error" *ngIf="isControlInvalid('password')">Введите пароль. Длина от 5 до 10 символов.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</section>
+
+
+
